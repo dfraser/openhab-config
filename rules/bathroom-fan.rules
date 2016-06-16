@@ -1,0 +1,13 @@
+import org.openhab.model.script.actions.Timer
+var Timer timer
+
+rule "Bathroom Fan Timer"
+when
+	Item bathroomFan changed to ON
+then
+	logInfo("fanTimer","got fan on command")
+	timer = createTimer(now.plusMinutes(10)) [|
+		logInfo("fantimer","Bathroom fan turned off")
+		sendCommand(bathroomFan, OFF)
+	]
+end

@@ -1,0 +1,35 @@
+rule "Evening Lights"
+when
+	Item Sunset_Event received update ON
+then
+	sendCommand(diningCeiling,50)
+	sendCommand(kitchenCeiling,50)
+	sendCommand(entryCeiling,75)
+	sendCommand(livingRoomLamp,ON)
+	sendCommand(bedsideRight,75)
+end
+
+rule "Bedtime"
+when
+	Time cron "0 30 23 * * ?"
+then
+	sendCommand(gLights,OFF)
+end
+
+rule "Morning Lights"
+when
+	Time cron "0 0 7 ? * MON-FRI"
+then
+	sendCommand(bedsideRight,ON)
+	sendCommand(kitchenCeiling,ON)
+	sendCommand(entryCeiling,ON)
+	sendCommand(livingRoomLamp,ON)
+end
+
+rule "Gone to Work"
+when
+	Time cron "0 0 9 ? * MON-FRI"
+then
+	sendCommand(gLights,OFF)
+end
+

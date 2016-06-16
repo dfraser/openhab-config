@@ -1,0 +1,15 @@
+sitemap default label="Apartment" 
+{
+	Frame {
+		Switch item=gLights label="All Lights"  mappings=[ON="All On", OFF="All Off"]
+		Group item=gLights label="Lights" icon="firstfloor"
+		Switch item=bathroomFan label="Bathroom Fan" icon="wind"
+		Switch item=espresso label="Espresso Machine" icon="wind"
+		Text item=Sunset_Time label="Sunset Time [%1tH:%1$tM]"
+		Text item=leakSensor label="Leak Sensor Status [%s]"
+		Text item=entryMotionSensor label="Entry Motion Sensor [%s]"
+		Text item=entryMotionSensorBatteryLevel label="Motion Sensor Battery [%s]"
+		Switch item=kitchenRandom label="Kitchen Random" icon="hue"
+		Switch item=vacationMode label="Vacation Mode" icon="sun"
+	}
+}

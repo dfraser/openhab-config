@@ -1,0 +1,17 @@
+var Number kitchenState = 0
+
+rule "kitchenBrighter"
+when
+	Item kitchenCeiling received update
+then
+	logInfo("kitchen","updated: "+kitchenCeiling)
+	if (kitchenCeiling.state >= 5) {
+		logInfo("kitchen","got update")
+		sendCommand(gHueKitchenCT,60)
+		sendCommand(gHueKitchen,kitchenCeiling.state.toString())
+	}
+	if (kitchenCeiling.state == 0) {
+		sendCommand(gHueKitchen,5)
+	}
+end
+

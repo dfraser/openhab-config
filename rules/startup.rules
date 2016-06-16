@@ -1,0 +1,6 @@
+rule "Startup Notice"
+when
+	System started
+then
+	pushover("System Started")
+end

@@ -1,0 +1,4 @@
+Switch miniRemoteButtonA        "mini remote button a" {insteonplm="35.6e.e6:F00.00.10#buttonA", autoupdate="false"}
+Switch miniRemoteButtonB        "mini remote button b" {insteonplm="35.6e.e6:F00.00.10#buttonB", autoupdate="false"}
+Switch miniRemoteButtonC        "mini remote button c" {insteonplm="35.6e.e6:F00.00.10#buttonC", autoupdate="false"}
+Switch miniRemoteButtonD        "mini remote button d" {insteonplm="35.6e.e6:F00.00.10#buttonD", autoupdate="false"}

@@ -1,0 +1,10 @@
+val java.util.Random rand = new java.util.Random
+
+rule "Random Kitchen Lights"
+when
+	Item kitchenRandom changed to ON
+then
+	var HSBType color = new HSBType("360,100,100");
+	sendCommand(kitchenMiddle_Color, color);
+end
+

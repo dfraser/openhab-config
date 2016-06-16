@@ -1,0 +1,22 @@
+
+Group:Switch:OR(ON, OFF) gLights "All Lights [(%d)]"
+
+Dimmer kitchenCeiling "Kitchen Ceiling [%%]" (gLights) {insteonplm="1F.C9.AE:F00.00.01#dimmer"} 
+Dimmer diningCeiling "Dining Room Ceiling [%%]" (gLights) {insteonplm="38.10.09:F00.00.01#dimmer"}
+Dimmer entryCeiling "Entry Ceiling [%%]" (gLights) {insteonplm="1F.C7.CC:F00.00.01#dimmer"}
+Dimmer hallCeiling "Hall Ceiling [%%]" (gLights) {insteonplm="21.13.57:F00.00.01#dimmer"}
+Dimmer livingRoomLamp "Living Room Lamp [%%]" (gLights) {insteonplm="26.71.3A:F00.00.05#dimmer"}
+Dimmer bedsideRight "Bedside Right [%%]" (gLights) {insteonplm="21.8A.E6:F00.00.05#dimmer"}
+
+Switch bathroomFan "Bathroom Fan" {insteonplm="24.CE.80:F00.00.02#switch"}
+Switch espresso "Espresso Machine" {insteonplm="37.66.F0:F00.00.02#switch"}
+
+Contact entryMotionSensor "motion sensor [MAP(contact.map):%s]" {insteonplm="25.9F.D5:0x00004A#contact"}
+Number entryMotionSensorBatteryLevel "motion sensor battery level [%.1f]" {insteonplm="25.9F.D5:0x00004A#data,field=battery_level"}
+Number entryMotionSensorLightLevel "motion sensor light level [%.1f]" {insteonplm="25.9F.D5:0x00004A#data,field=light_level"}
+
+Contact entryDoorSensor "door sensor [MAP(contact.map):%s]" {insteonplm="23.3D.E7:0x00004A#contact"}
+Number entryDoorSensorBatteryLevel "door sensor battery level [%.1f]" {insteonplm="23.3D.E7:0x00004A#data,field=battery_level"}
+
+Contact leakSensor "leak sensor [MAP(contact.map):%s]" {insteonplm="25.AB.CD:F00.00.0A#contact"}
+

@@ -1,0 +1,52 @@
+import org.openhab.core.library.types.HSBType
+
+var HSBType blueColor = HSBType::BLUE
+var HSBType whiteColor = HSBType::WHITE
+
+rule "remoteButtonAOn"
+when
+	Item miniRemoteButtonA received update OFF
+then
+	logInfo("remoteButtonA","got command")
+	sendCommand(bedsideRight, OFF)
+end
+
+rule "remoteButtonAOff"
+when
+        Item miniRemoteButtonA received update ON
+then
+        logInfo("remoteButtonA","got command")
+        sendCommand(bedsideRight, ON)
+end
+
+rule "remoteButtonBOn"
+when
+	Item miniRemoteButtonB received update ON
+then
+	logInfo("remoteButtonB","on")
+	sendCommand(gHueKitchen,20)
+	sendCommand(gHueKitchenCT,50)
+end
+
+rule "remoteButtonBOff"
+when
+	Item miniRemoteButtonB received update OFF
+then
+	sendCommand(gHueKitchen,OFF)
+end
+
+rule "remoteButtonCOn"
+when
+        Item miniRemoteButtonC received update ON
+then
+	logInfo("remoteButtonC","clicky!")
+	sendCommand(gHueKitchenColor, blueColor)
+	sendCommand(gHueKitchen,100)
+end
+
+rule "remoteButtonCOff"
+when
+        Item miniRemoteButtonC received update OFF
+then
+        sendCommand(gHueKitchen,OFF)
+end

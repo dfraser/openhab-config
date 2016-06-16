@@ -1,0 +1,8 @@
+rule "Door Alert"
+when
+	Item entryDoorSensor changed to OPEN
+then
+	pushover("Condo door opened");
+end
+
+

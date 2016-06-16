@@ -1,0 +1,9 @@
+rule "Leak Happened"
+when
+	Item leakSensor changed to CLOSED
+
+then	
+	logInfo("leak!","got leak!!");
+end
+
+

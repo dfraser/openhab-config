@@ -1,0 +1,19 @@
+Group gHueKitchen
+Group gHueKitchenCT
+Group gHueKitchenColor
+
+Dimmer kitchenMiddle_Dimm "Kitchen Middle Globe"  (gLights,gHueKitchen)   {hue="1;brightness;30"}
+Dimmer kitchenOuter_Dimm "Kitchen Outer Globe" (gLights,gHueKitchen) {hue="2;brightness;30"}
+Dimmer kitchenInner_Dimm "Kitchen Inner Globe" (gLights, gHueKitchen) {hue="3;brightness;30"}
+
+Dimmer kitchenMiddle_CT "Kitchen Middle Globe"  (gLights,gHueKitchenCT) {hue="1;colorTemperature;30"}
+Dimmer kitchenOuter_CT "Kitchen Outer Globe"  (gLights,gHueKitchenCT) {hue="2;colorTemperature;30"}
+Dimmer kitchenInner_CT "Kitchen Inner Globe"  (gLights,gHueKitchenCT) {hue="3;colorTemperature;30"}
+
+Color kitchenMiddle_Color "Kitchen Middle Globe" (gLights,gHueKitchenColor) {hue="1"}
+Color kitchenOuter_Color "Kitchen Outer Globe"  (gLights,gHueKitchenColor) {hue="2"}
+Color kitchenInner_Color "Kitchen Inner Globe"  (gLights,gHueKitchenColor) {hue="3"}
+
+Color kitchenRandom "Kitchen Random Colour" 
+
+

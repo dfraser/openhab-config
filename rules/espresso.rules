@@ -1,0 +1,31 @@
+rule "Weekday Morning Espresso"
+when
+	Time cron "0 30 6 ? * MON-FRI"
+then
+	if (vacationMode.state == OFF) {
+		sendCommand(espresso,ON)
+	}
+end
+
+rule "Weekend Espresso" 
+when
+	Time cron "0 0 8 ? * SAT-SUN"
+then
+	if (vacationMode.state == OFF) {
+		sendCommand(espresso,ON)
+	}
+end
+
+rule "Espresso Gone to Work"
+when
+	Time cron "0 0 9 ? * MON-FRI"
+then
+	sendCommand(espresso,OFF)
+end
+
+rule "Espresso Evening"
+when
+	Time cron "0 0 21 * * ?"
+then
+	sendCommand(espresso,OFF)
+end
