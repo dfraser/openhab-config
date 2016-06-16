@@ -1,6 +1,6 @@
 rule "Weekday Morning Espresso"
 when
-	Time cron "0 30 6 ? * MON-FRI"
+	Time cron "0 30 5 ? * MON-FRI"
 then
 	if (vacationMode.state == OFF) {
 		sendCommand(espresso,ON)

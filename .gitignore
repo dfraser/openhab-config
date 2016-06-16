@@ -2,4 +2,4 @@ openhab.cfg
 users.cfg
 openhab_default.cfg
 logback*.xml
-
+transform/
